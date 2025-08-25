@@ -1,0 +1,76 @@
+name: GeoSonarHunt
+options:
+  bundleIdPrefix: com.geosohunt
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+  defaultConfig: Debug
+  
+configs:
+  Debug: debug
+  Release: release
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ENABLE_SWIFT_TESTING: YES
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+
+targets:
+  GeoSonarHuntApp:
+    type: application
+    platform: iOS
+    sources: 
+      - GeoSonarHuntApp
+    dependencies:
+      - package: GeoSonarCore
+      - package: GeoSonarUI
+    info:
+      path: GeoSonarHuntApp/Info.plist
+      properties:
+        CFBundleDisplayName: "Geo Sonar Hunt"
+        CFBundleIdentifier: "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        CFBundleVersion: "1"
+        CFBundleShortVersionString: "1.0.0"
+        NSLocationWhenInUseUsageDescription: "このアプリは宝探しゲームで現在位置を使用します"
+        UILaunchStoryboardName: LaunchScreen
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiredDeviceCapabilities:
+          - armv7
+          - location-services
+          - gps
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.geosohunt.app
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UIUserInterfaceStyle: Automatic
+
+packages:
+  GeoSonarCore:
+    path: Packages/GeoSonarCore
+  GeoSonarUI:
+    path: Packages/GeoSonarUI
+  GeoSonarTesting:
+    path: Packages/GeoSonarTesting
+
+schemes:
+  GeoSonarHuntApp:
+    build:
+      targets:
+        GeoSonarHuntApp: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

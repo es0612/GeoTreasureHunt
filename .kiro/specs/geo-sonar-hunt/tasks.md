@@ -1,6 +1,6 @@
 # 実装計画
 
-- [ ] 1. プロジェクト基盤とツールチェーンのセットアップ
+- [x] 1. プロジェクト基盤とツールチェーンのセットアップ
   - XcodeGenプロジェクト設定ファイル（project.yml）を作成
   - SPMローカルパッケージ構造を構築（GeoSonarCore、GeoSonarUI、GeoSonarTesting）
   - Swift 6とSwift Testingフレームワークの設定

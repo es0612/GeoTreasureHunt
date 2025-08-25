@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D58C9D7335AE4901CAB94C1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B949A7F2E7766D0198161A05 /* App.swift */; };
+		7470533A5CF5EFB29A939E16 /* GeoSonarUI in Frameworks */ = {isa = PBXBuildFile; productRef = 24A510A27E98BE6B84054CDC /* GeoSonarUI */; };
+		95C1BE4F45E95F8BE4D09092 /* GeoSonarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 98B349380E462B46DDC22953 /* GeoSonarCore */; };
+		A41FE006D78BAC54839778EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF36B2CF04A323EEA78826 /* ContentView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B593F738BBC327DBC16D110 /* GeoSonarCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GeoSonarCore; path = Packages/GeoSonarCore; sourceTree = SOURCE_ROOT; };
+		43E816C08853903A0EC6B884 /* GeoSonarHuntApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GeoSonarHuntApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B949A7F2E7766D0198161A05 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		D7EF36B2CF04A323EEA78826 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8A87BD2C401BB33B7E3D88E /* GeoSonarTesting */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GeoSonarTesting; path = Packages/GeoSonarTesting; sourceTree = SOURCE_ROOT; };
+		E049F72A7DD91B61B784DB20 /* GeoSonarUI */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GeoSonarUI; path = Packages/GeoSonarUI; sourceTree = SOURCE_ROOT; };
+		EEEDC49F02B9BA87EADEFD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF1DCCA9F752E8111A1CB5D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95C1BE4F45E95F8BE4D09092 /* GeoSonarCore in Frameworks */,
+				7470533A5CF5EFB29A939E16 /* GeoSonarUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		94F2064DBCDDA08583018CB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43E816C08853903A0EC6B884 /* GeoSonarHuntApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B31715B874A731FF20C50404 = {
+			isa = PBXGroup;
+			children = (
+				C745D63B0FE0215378B6CCA2 /* GeoSonarHuntApp */,
+				CD0BC41865F2F5F1A8305C2A /* Packages */,
+				94F2064DBCDDA08583018CB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C745D63B0FE0215378B6CCA2 /* GeoSonarHuntApp */ = {
+			isa = PBXGroup;
+			children = (
+				B949A7F2E7766D0198161A05 /* App.swift */,
+				D7EF36B2CF04A323EEA78826 /* ContentView.swift */,
+				EEEDC49F02B9BA87EADEFD1F /* Info.plist */,
+			);
+			path = GeoSonarHuntApp;
+			sourceTree = "<group>";
+		};
+		CD0BC41865F2F5F1A8305C2A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				3B593F738BBC327DBC16D110 /* GeoSonarCore */,
+				D8A87BD2C401BB33B7E3D88E /* GeoSonarTesting */,
+				E049F72A7DD91B61B784DB20 /* GeoSonarUI */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B5BCE2912612D0A628555B3 /* GeoSonarHuntApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C594B842EC380D14E763954 /* Build configuration list for PBXNativeTarget "GeoSonarHuntApp" */;
+			buildPhases = (
+				30C0652863248B312F49DDA2 /* Sources */,
+				EF1DCCA9F752E8111A1CB5D9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoSonarHuntApp;
+			packageProductDependencies = (
+				98B349380E462B46DDC22953 /* GeoSonarCore */,
+				24A510A27E98BE6B84054CDC /* GeoSonarUI */,
+			);
+			productName = GeoSonarHuntApp;
+			productReference = 43E816C08853903A0EC6B884 /* GeoSonarHuntApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		392348E3398A7756AF01BF88 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 31677D9759FE08A3521A6FB0 /* Build configuration list for PBXProject "GeoSonarHunt" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B31715B874A731FF20C50404;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				718A43636DD0B86364743204 /* XCLocalSwiftPackageReference "Packages/GeoSonarCore" */,
+				484137F801294780262DE116 /* XCLocalSwiftPackageReference "Packages/GeoSonarTesting" */,
+				E6913482BBD1C5B3856DB31E /* XCLocalSwiftPackageReference "Packages/GeoSonarUI" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B5BCE2912612D0A628555B3 /* GeoSonarHuntApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30C0652863248B312F49DDA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D58C9D7335AE4901CAB94C1 /* App.swift in Sources */,
+				A41FE006D78BAC54839778EA /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5653C6400A6CE5993C29145E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_SWIFT_TESTING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A29B753073D58E4BAC74C9DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GeoSonarHuntApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geosohunt.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A40EEB92994D7DB230CB132D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_SWIFT_TESTING = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		C292EEA10B6214EAA87E1DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = GeoSonarHuntApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geosohunt.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31677D9759FE08A3521A6FB0 /* Build configuration list for PBXProject "GeoSonarHunt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40EEB92994D7DB230CB132D /* Debug */,
+				5653C6400A6CE5993C29145E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C594B842EC380D14E763954 /* Build configuration list for PBXNativeTarget "GeoSonarHuntApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A29B753073D58E4BAC74C9DC /* Debug */,
+				C292EEA10B6214EAA87E1DFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		484137F801294780262DE116 /* XCLocalSwiftPackageReference "Packages/GeoSonarTesting" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GeoSonarTesting;
+		};
+		718A43636DD0B86364743204 /* XCLocalSwiftPackageReference "Packages/GeoSonarCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GeoSonarCore;
+		};
+		E6913482BBD1C5B3856DB31E /* XCLocalSwiftPackageReference "Packages/GeoSonarUI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GeoSonarUI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		24A510A27E98BE6B84054CDC /* GeoSonarUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GeoSonarUI;
+		};
+		98B349380E462B46DDC22953 /* GeoSonarCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GeoSonarCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 392348E3398A7756AF01BF88 /* Project object */;
+}
