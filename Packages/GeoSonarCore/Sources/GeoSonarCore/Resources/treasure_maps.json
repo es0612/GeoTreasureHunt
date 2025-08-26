@@ -1,0 +1,95 @@
+{
+  "maps": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "name": "上野公園エリア",
+      "description": "上野公園周辺の歴史的な宝探し。美術館や動物園の近くに隠された宝を見つけよう。",
+      "region": {
+        "center": {
+          "latitude": 35.7148,
+          "longitude": 139.7753
+        },
+        "span": {
+          "latitudeDelta": 0.008,
+          "longitudeDelta": 0.008
+        }
+      },
+      "treasures": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440011",
+          "coordinate": {
+            "latitude": 35.7158,
+            "longitude": 139.7763
+          },
+          "name": "桜の宝",
+          "description": "美しい桜の木の下に隠された春の宝",
+          "points": 100,
+          "discoveryRadius": 15.0
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440012",
+          "coordinate": {
+            "latitude": 35.7138,
+            "longitude": 139.7743
+          },
+          "name": "芸術の宝",
+          "description": "国立博物館近くの文化的な宝",
+          "points": 150,
+          "discoveryRadius": 12.0
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440013",
+          "coordinate": {
+            "latitude": 35.7168,
+            "longitude": 139.7733
+          },
+          "name": "動物の宝",
+          "description": "上野動物園の入口付近に隠された宝",
+          "points": 120,
+          "discoveryRadius": 10.0
+        }
+      ],
+      "difficulty": "easy"
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "name": "新宿御苑エリア",
+      "description": "新宿御苑の広大な庭園で自然の中の宝探し。四季折々の美しさを楽しみながら探索しよう。",
+      "region": {
+        "center": {
+          "latitude": 35.6851,
+          "longitude": 139.7103
+        },
+        "span": {
+          "latitudeDelta": 0.012,
+          "longitudeDelta": 0.012
+        }
+      },
+      "treasures": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440021",
+          "coordinate": {
+            "latitude": 35.6861,
+            "longitude": 139.7113
+          },
+          "name": "庭園の宝",
+          "description": "日本庭園の美しい池のほとりに隠された宝",
+          "points": 180,
+          "discoveryRadius": 20.0
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440022",
+          "coordinate": {
+            "latitude": 35.6841,
+            "longitude": 139.7093
+          },
+          "name": "温室の宝",
+          "description": "大温室近くの熱帯植物に囲まれた宝",
+          "points": 200,
+          "discoveryRadius": 15.0
+        }
+      ],
+      "difficulty": "medium"
+    }
+  ]
+}

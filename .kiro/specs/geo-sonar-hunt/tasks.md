@@ -20,36 +20,36 @@
     - GameSession構造体と進捗追跡機能実装
     - _要件: 1.1, 1.2, 6.5, 7.1_
 
-- [ ] 3. Repository層の実装（TDD）
-  - [ ] 3.1 Repository プロトコルとモックの作成
+- [x] 3. Repository層の実装（TDD）
+  - [x] 3.1 Repository プロトコルとモックの作成
     - TreasureMapRepositoryプロトコル定義
     - GameProgressRepositoryプロトコル定義
     - テスト用モック実装（GeoSonarTestingパッケージ）
     - _要件: 1.2, 7.1, 7.2_
 
-  - [ ] 3.2 LocalTreasureMapRepositoryの実装
+  - [x] 3.2 LocalTreasureMapRepositoryの実装
     - JSONファイルからの地図データ読み込みテスト作成
     - 東京公園エリアのサンプルデータ作成
     - エラーハンドリング（データ破損、ファイル不存在）のテスト
     - Repository実装でテストを通す
     - _要件: 1.1, 1.4, 1.5_
 
-  - [ ] 3.3 LocalGameProgressRepositoryの実装
+  - [x] 3.3 LocalGameProgressRepositoryの実装
     - UserDefaultsを使用した進捗保存のテスト作成
     - 発見済み宝物の永続化テスト
     - スコア計算と保存のテスト
     - Repository実装でテストを通す
     - _要件: 7.1, 7.2, 7.3, 7.4_
 
-- [ ] 4. 位置情報サービスの実装（TDD）
-  - [ ] 4.1 LocationServiceのテストとプロトコル作成
+- [x] 4. 位置情報サービスの実装（TDD）
+  - [x] 4.1 LocationServiceのテストとプロトコル作成
     - 位置情報許可要求のテスト作成
     - リアルタイム位置更新のテスト作成
     - バックグラウンド処理とバッテリー最適化のテスト
     - LocationServiceProtocolとMockLocationService実装
     - _要件: 2.1, 2.2, 2.4_
 
-  - [ ] 4.2 LocationServiceの実装
+  - [x] 4.2 LocationServiceの実装
     - CLLocationManagerを使用した実装
     - Swift 6の並行性チェックに対応した@MainActor実装
     - エラーハンドリング（GPS信号弱、許可拒否）

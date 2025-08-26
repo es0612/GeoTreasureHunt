@@ -13,19 +13,25 @@ let package = Package(
         ),
     ],
     dependencies: [
-        // Add external dependencies here if needed
+        .package(path: "../GeoSonarTesting"),
     ],
     targets: [
         .target(
             name: "GeoSonarCore",
             dependencies: [],
+            resources: [
+                .process("Resources")
+            ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
             ]
         ),
         .testTarget(
             name: "GeoSonarCoreTests",
-            dependencies: ["GeoSonarCore"],
+            dependencies: [
+                "GeoSonarCore",
+                "GeoSonarTesting"
+            ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
             ]
