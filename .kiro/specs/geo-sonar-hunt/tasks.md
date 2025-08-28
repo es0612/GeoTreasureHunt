@@ -71,15 +71,15 @@
     - FeedbackService実装でテストを通す
     - _要件: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6_
 
-- [ ] 6. ViewModelレイヤーの実装（TDD）
-  - [ ] 6.1 MapSelectionViewModelの実装
+- [x] 6. ViewModelレイヤーの実装（TDD）
+  - [x] 6.1 MapSelectionViewModelの実装
     - 地図リスト表示のテスト作成
     - 地図選択とゲームセッション開始のテスト
     - ローディング状態管理のテスト
     - @Observableマクロを使用したViewModel実装
     - _要件: 1.1, 1.2_
 
-  - [ ] 6.2 ExplorationViewModelの実装
+  - [x] 6.2 ExplorationViewModelの実装
     - モード切り替え（ダウジング⇔ソナー）のテスト作成
     - リアルタイム位置更新とUI反映のテスト
     - 宝発見処理とスコア更新のテスト
@@ -87,14 +87,14 @@
     - _要件: 3.1, 3.2, 4.1, 5.1, 5.2, 6.1, 6.2_
 
 - [ ] 7. SwiftUI Views の実装（TDD）
-  - [ ] 7.1 基本UIコンポーネントの作成
+  - [x] 7.1 基本UIコンポーネントの作成
     - MapRowView、ModeToggleView、DowsingCompassViewのテスト作成
     - SwiftUI PreviewとSnapshot testingの設定
     - アクセシビリティ対応のテスト
     - UIコンポーネント実装
     - _要件: 3.1, 3.3, 5.1, 5.2_
 
-  - [ ] 7.2 メイン画面の実装
+  - [x] 7.2 メイン画面の実装
     - MapSelectionViewのUIテスト作成
     - ExplorationViewのUIテスト作成
     - ナビゲーション遷移のテスト

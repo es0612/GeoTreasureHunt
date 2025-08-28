@@ -14,6 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../GeoSonarCore"),
+        .package(path: "../GeoSonarTesting"),
     ],
     targets: [
         .target(
@@ -25,7 +26,10 @@ let package = Package(
         ),
         .testTarget(
             name: "GeoSonarUITests",
-            dependencies: ["GeoSonarUI"],
+            dependencies: [
+                "GeoSonarUI",
+                .product(name: "GeoSonarTesting", package: "GeoSonarTesting")
+            ],
             swiftSettings: [
                 .enableExperimentalFeature("StrictConcurrency")
             ]
