@@ -90,6 +90,84 @@ public enum ExplorationMode: String, CaseIterable, Sendable {
     }
 }
 
+// MARK: - Feedback Types
+
+/// Represents the intensity level of feedback
+public enum FeedbackIntensity: String, CaseIterable, Sendable {
+    case weak = "weak"
+    case medium = "medium"
+    case strong = "strong"
+    case veryStrong = "veryStrong"
+    
+    /// Numeric value for intensity (0.0 to 1.0)
+    public var numericValue: Double {
+        switch self {
+        case .weak:
+            return 0.25
+        case .medium:
+            return 0.5
+        case .strong:
+            return 0.75
+        case .veryStrong:
+            return 1.0
+        }
+    }
+}
+
+/// Settings for pulse animation visual feedback
+public struct PulseAnimationSettings: Sendable {
+    public let frequency: Double // Hz
+    public let amplitude: Double // 0.0 to 1.0
+    public let duration: Double // seconds
+    
+    public init(frequency: Double, amplitude: Double, duration: Double) {
+        self.frequency = frequency
+        self.amplitude = amplitude
+        self.duration = duration
+    }
+}
+
+/// Color representation for visual feedback
+public struct FeedbackColor: Sendable {
+    public let red: Double
+    public let green: Double
+    public let blue: Double
+    public let alpha: Double
+    
+    public init(red: Double, green: Double, blue: Double, alpha: Double) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
+    }
+    
+    /// Predefined colors for different intensities
+    public static let weakSonar = FeedbackColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 0.3)
+    public static let mediumSonar = FeedbackColor(red: 0.0, green: 0.8, blue: 1.0, alpha: 0.5)
+    public static let strongSonar = FeedbackColor(red: 0.2, green: 1.0, blue: 0.8, alpha: 0.7)
+    public static let veryStrongSonar = FeedbackColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 1.0)
+}
+
+/// Game settings for audio and haptic feedback
+public struct GameSettings: Sendable {
+    public let audioEnabled: Bool
+    public let hapticsEnabled: Bool
+    public let audioVolume: Float // 0.0 to 1.0
+    
+    public init(audioEnabled: Bool, hapticsEnabled: Bool, audioVolume: Float) {
+        self.audioEnabled = audioEnabled
+        self.hapticsEnabled = hapticsEnabled
+        self.audioVolume = audioVolume
+    }
+    
+    /// Default game settings
+    public static let `default` = GameSettings(
+        audioEnabled: true,
+        hapticsEnabled: true,
+        audioVolume: 0.8
+    )
+}
+
 // MARK: - Codable Coordinate Helper
 
 /// Helper struct to make CLLocationCoordinate2D Codable
