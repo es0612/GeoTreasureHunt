@@ -148,8 +148,51 @@ public struct FeedbackColor: Sendable {
     public static let veryStrongSonar = FeedbackColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 1.0)
 }
 
+// MARK: - Tutorial Types
+
+/// Represents the current step in the tutorial sequence
+public enum TutorialStep: String, CaseIterable, Codable, Sendable {
+    case welcome = "welcome"
+    case dowsingExplanation = "dowsingExplanation"
+    case sonarExplanation = "sonarExplanation"
+    case practiceMode = "practiceMode"
+    case completed = "completed"
+    
+    /// Localized description for the tutorial step
+    public var localizedDescription: String {
+        switch self {
+        case .welcome:
+            return "Welcome"
+        case .dowsingExplanation:
+            return "Dowsing Mode"
+        case .sonarExplanation:
+            return "Sonar Mode"
+        case .practiceMode:
+            return "Practice"
+        case .completed:
+            return "Completed"
+        }
+    }
+    
+    /// Next step in the tutorial sequence
+    public var nextStep: TutorialStep? {
+        switch self {
+        case .welcome:
+            return .dowsingExplanation
+        case .dowsingExplanation:
+            return .sonarExplanation
+        case .sonarExplanation:
+            return .practiceMode
+        case .practiceMode:
+            return .completed
+        case .completed:
+            return nil
+        }
+    }
+}
+
 /// Game settings for audio and haptic feedback
-public struct GameSettings: Sendable {
+public struct GameSettings: Codable, Equatable, Sendable {
     public let audioEnabled: Bool
     public let hapticsEnabled: Bool
     public let audioVolume: Float // 0.0 to 1.0
@@ -157,7 +200,7 @@ public struct GameSettings: Sendable {
     public init(audioEnabled: Bool, hapticsEnabled: Bool, audioVolume: Float) {
         self.audioEnabled = audioEnabled
         self.hapticsEnabled = hapticsEnabled
-        self.audioVolume = audioVolume
+        self.audioVolume = max(0.0, min(1.0, audioVolume)) // Clamp to valid range
     }
     
     /// Default game settings
