@@ -15,6 +15,7 @@ public final class ExplorationViewModel: Sendable {
     private let explorationService: ExplorationServiceProtocol
     private let feedbackService: FeedbackServiceProtocol
     private let progressRepository: GameProgressRepository
+    private let errorHandler: ErrorHandler
     
     // MARK: - Game State
     
@@ -33,6 +34,8 @@ public final class ExplorationViewModel: Sendable {
     
     public private(set) var isLocationPermissionGranted: Bool = false
     public private(set) var errorMessage: String?
+    public var currentError: GameError? { errorHandler.currentError }
+    public var isShowingError: Bool { errorHandler.isShowingError }
     
     // MARK: - Private Properties
     
@@ -47,7 +50,8 @@ public final class ExplorationViewModel: Sendable {
         locationService: any LocationServiceProtocol,
         explorationService: ExplorationServiceProtocol,
         feedbackService: FeedbackServiceProtocol,
-        progressRepository: GameProgressRepository
+        progressRepository: GameProgressRepository,
+        errorHandler: ErrorHandler = ErrorHandler()
     ) {
         self.currentSession = gameSession
         self.treasureMap = treasureMap
@@ -56,6 +60,7 @@ public final class ExplorationViewModel: Sendable {
         self.explorationService = explorationService
         self.feedbackService = feedbackService
         self.progressRepository = progressRepository
+        self.errorHandler = errorHandler
         
         setupLocationObservation()
     }
@@ -122,7 +127,7 @@ public final class ExplorationViewModel: Sendable {
             do {
                 try await progressRepository.saveProgress(currentSession)
             } catch {
-                errorMessage = "進捗の保存に失敗しました"
+                await handleError(.dataCorruption("進捗の保存に失敗しました"))
             }
             
             return discoveredTreasure
@@ -147,10 +152,19 @@ public final class ExplorationViewModel: Sendable {
             do {
                 try locationService.startLocationUpdates()
             } catch let error as LocationServiceError {
-                errorMessage = error.localizedDescription
+                switch error {
+                case .locationServicesDisabled:
+                    await handleError(.locationServiceUnavailable)
+                case .permissionDenied:
+                    await handleError(.locationPermissionDenied)
+                case .locationUnavailable:
+                    await handleError(.gpsSignalWeak)
+                }
             } catch {
-                errorMessage = "位置情報の取得を開始できませんでした"
+                await handleError(.unexpectedError("位置情報の取得を開始できませんでした"))
             }
+        } else {
+            await handleError(.locationPermissionDenied)
         }
     }
     
@@ -207,6 +221,37 @@ public final class ExplorationViewModel: Sendable {
     /// Clears any error message
     public func clearError() {
         errorMessage = nil
+        Task {
+            await errorHandler.clearError()
+        }
+    }
+    
+    /// Handles errors with automatic recovery attempts
+    public func handleError(_ error: GameError) async {
+        await errorHandler.handle(error)
+    }
+    
+    /// Retries the last failed operation
+    public func retryLastOperation() async {
+        guard let currentError = errorHandler.currentError else { return }
+        
+        switch currentError {
+        case .locationPermissionDenied, .locationServiceUnavailable:
+            await startLocationTracking()
+        case .gpsSignalWeak:
+            await handleLocationUpdate()
+        case .compassUnavailable:
+            // Switch to sonar mode as fallback
+            switchMode(to: .sonar)
+            await errorHandler.clearError()
+        case .audioServiceUnavailable, .hapticServiceUnavailable:
+            // Try to reinitialize feedback service
+            // This would be implemented in the actual feedback service
+            await errorHandler.clearError()
+        default:
+            // For other errors, just clear and continue
+            await errorHandler.clearError()
+        }
     }
     
     // MARK: - Private Methods

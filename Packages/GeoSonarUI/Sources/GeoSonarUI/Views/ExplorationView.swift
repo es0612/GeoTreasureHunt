@@ -61,6 +61,17 @@ public struct ExplorationView: View {
                 Text("\(treasure.name)を発見しました！\n+\(treasure.points)ポイント")
             }
         }
+        .errorOverlay(
+            error: Binding(
+                get: { viewModel.currentError },
+                set: { _ in Task { await viewModel.clearError() } }
+            ),
+            onRetry: {
+                Task {
+                    await viewModel.retryLastOperation()
+                }
+            }
+        )
         .accessibilityLabel("Exploration Screen")
     }
     
