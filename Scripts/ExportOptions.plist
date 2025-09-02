@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Export method for App Store submission -->
+    <key>method</key>
+    <string>app-store</string>
+    
+    <!-- Team ID for code signing -->
+    <key>teamID</key>
+    <string>$(DEVELOPMENT_TEAM_ID)</string>
+    
+    <!-- Upload symbols for crash reporting -->
+    <key>uploadSymbols</key>
+    <true/>
+    
+    <!-- Upload bitcode (disabled for iOS 14+) -->
+    <key>uploadBitcode</key>
+    <false/>
+    
+    <!-- Compile bitcode (disabled for iOS 14+) -->
+    <key>compileBitcode</key>
+    <false/>
+    
+    <!-- Strip Swift symbols -->
+    <key>stripSwiftSymbols</key>
+    <true/>
+    
+    <!-- Thinning for App Store -->
+    <key>thinning</key>
+    <string>&lt;none&gt;</string>
+    
+    <!-- Provisioning profiles -->
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.geosohunt.app</key>
+        <string>$(APP_PROVISIONING_PROFILE_RELEASE)</string>
+    </dict>
+    
+    <!-- Code signing -->
+    <key>signingStyle</key>
+    <string>manual</string>
+    
+    <!-- Distribution certificate -->
+    <key>signingCertificate</key>
+    <string>iPhone Distribution</string>
+    
+    <!-- Destination for export -->
+    <key>destination</key>
+    <string>export</string>
+    
+    <!-- Generate app size report -->
+    <key>generateAppStoreInformation</key>
+    <true/>
+</dict>
+</plist>

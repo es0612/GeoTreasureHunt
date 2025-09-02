@@ -17,6 +17,7 @@
 		5E7354E0C163873ED4B96E32 /* AccessibilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77B23E02A819B8A7B2FA23 /* AccessibilityTests.swift */; };
 		68486DC55EA64BB280C08BA9 /* CompleteTreasureHuntFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA91B165963EE6851C43119 /* CompleteTreasureHuntFlowTests.swift */; };
 		7470533A5CF5EFB29A939E16 /* GeoSonarUI in Frameworks */ = {isa = PBXBuildFile; productRef = 24A510A27E98BE6B84054CDC /* GeoSonarUI */; };
+		8516232A044BF87410391B5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5428428B5A6D90EE8D7323B6 /* Assets.xcassets */; };
 		95C1BE4F45E95F8BE4D09092 /* GeoSonarCore in Frameworks */ = {isa = PBXBuildFile; productRef = 98B349380E462B46DDC22953 /* GeoSonarCore */; };
 		99BA9D842F406D87E690EAC9 /* ComprehensiveIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E048D98F60042C98B430E8A4 /* ComprehensiveIntegrationTests.swift */; };
 		A41FE006D78BAC54839778EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF36B2CF04A323EEA78826 /* ContentView.swift */; };
@@ -46,6 +47,7 @@
 		216166FB0BECBD567292AEF6 /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		3B593F738BBC327DBC16D110 /* GeoSonarCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GeoSonarCore; path = Packages/GeoSonarCore; sourceTree = SOURCE_ROOT; };
 		43E816C08853903A0EC6B884 /* GeoSonarHuntApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GeoSonarHuntApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5428428B5A6D90EE8D7323B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59D1BCE77BED33575099290B /* GeoSonarHuntAppUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = GeoSonarHuntAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D8F58E25B076813D01B2E4A /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		9F77B23E02A819B8A7B2FA23 /* AccessibilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTests.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				B949A7F2E7766D0198161A05 /* App.swift */,
+				5428428B5A6D90EE8D7323B6 /* Assets.xcassets */,
 				D7EF36B2CF04A323EEA78826 /* ContentView.swift */,
 				EEEDC49F02B9BA87EADEFD1F /* Info.plist */,
 			);
@@ -170,6 +173,7 @@
 			buildConfigurationList = 9C594B842EC380D14E763954 /* Build configuration list for PBXNativeTarget "GeoSonarHuntApp" */;
 			buildPhases = (
 				30C0652863248B312F49DDA2 /* Sources */,
+				9850FE87877A1606A875E12E /* Resources */,
 				EF1DCCA9F752E8111A1CB5D9 /* Frameworks */,
 			);
 			buildRules = (
@@ -238,7 +242,17 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					2B5BCE2912612D0A628555B3 = {
+						DevelopmentTeam = "$(DEVELOPMENT_TEAM_ID)";
+						ProvisioningStyle = Manual;
+					};
+					4B385E9F080B51C72F278B06 = {
+						DevelopmentTeam = "$(DEVELOPMENT_TEAM_ID)";
+						ProvisioningStyle = Manual;
+					};
 					8105BC9C244F8F43C4B7521A = {
+						DevelopmentTeam = "$(DEVELOPMENT_TEAM_ID)";
+						ProvisioningStyle = Manual;
 						TestTargetID = 2B5BCE2912612D0A628555B3;
 					};
 				};
@@ -268,6 +282,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9850FE87877A1606A875E12E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8516232A044BF87410391B5D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		30C0652863248B312F49DDA2 /* Sources */ = {
@@ -380,13 +405,17 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM_ID)";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_SWIFT_TESTING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -402,6 +431,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -475,15 +505,18 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM_ID)";
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_SWIFT_TESTING = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DEBUG=1",
@@ -501,9 +534,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};

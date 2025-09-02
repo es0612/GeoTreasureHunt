@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Validation method -->
+    <key>method</key>
+    <string>app-store</string>
+    
+    <!-- Team ID -->
+    <key>teamID</key>
+    <string>$(DEVELOPMENT_TEAM_ID)</string>
+    
+    <!-- Upload symbols for validation -->
+    <key>uploadSymbols</key>
+    <true/>
+    
+    <!-- Upload bitcode (disabled) -->
+    <key>uploadBitcode</key>
+    <false/>
+    
+    <!-- Compile bitcode (disabled) -->
+    <key>compileBitcode</key>
+    <false/>
+    
+    <!-- Provisioning profiles -->
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.geosohunt.app</key>
+        <string>$(APP_PROVISIONING_PROFILE_RELEASE)</string>
+    </dict>
+    
+    <!-- Code signing for validation -->
+    <key>signingStyle</key>
+    <string>manual</string>
+    
+    <!-- Distribution certificate -->
+    <key>signingCertificate</key>
+    <string>iPhone Distribution</string>
+    
+    <!-- Destination -->
+    <key>destination</key>
+    <string>validation</string>
+</dict>
+</plist>

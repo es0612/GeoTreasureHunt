@@ -17,6 +17,16 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     ENABLE_SWIFT_TESTING: YES
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    # Release build optimizations
+    SWIFT_COMPILATION_MODE: wholemodule
+    SWIFT_OPTIMIZATION_LEVEL: "-O"
+    GCC_OPTIMIZATION_LEVEL: "s"
+    # Security settings
+    ENABLE_BITCODE: NO
+    VALIDATE_PRODUCT: YES
+    # Code signing
+    CODE_SIGN_STYLE: Manual
+    DEVELOPMENT_TEAM: "$(DEVELOPMENT_TEAM_ID)"
 
 targets:
   GeoSonarHuntApp:
@@ -50,6 +60,23 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UIUserInterfaceStyle: Automatic
+      Debug:
+        CODE_SIGN_IDENTITY: "iPhone Developer"
+        PROVISIONING_PROFILE_SPECIFIER: "$(APP_PROVISIONING_PROFILE_DEBUG)"
+      Release:
+        CODE_SIGN_IDENTITY: "iPhone Distribution"
+        PROVISIONING_PROFILE_SPECIFIER: "$(APP_PROVISIONING_PROFILE_RELEASE)"
+        # Release-specific optimizations
+        SWIFT_COMPILATION_MODE: wholemodule
+        SWIFT_OPTIMIZATION_LEVEL: "-O"
+        GCC_OPTIMIZATION_LEVEL: "s"
+        VALIDATE_PRODUCT: YES
+        # Strip debug symbols in release
+        STRIP_INSTALLED_PRODUCT: YES
+        COPY_PHASE_STRIP: YES
+        # Deployment settings
+        SKIP_INSTALL: NO
+        INSTALL_PATH: "/Applications"
 
   GeoSonarHuntAppTests:
     type: bundle.unit-test
