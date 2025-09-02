@@ -2,7 +2,7 @@ name: GeoSonarHunt
 options:
   bundleIdPrefix: com.geosohunt
   deploymentTarget:
-    iOS: "15.0"
+    iOS: "17.0"
   xcodeVersion: "15.0"
   createIntermediateGroups: true
   defaultConfig: Debug
@@ -16,7 +16,7 @@ settings:
     SWIFT_VERSION: "6.0"
     SWIFT_STRICT_CONCURRENCY: complete
     ENABLE_SWIFT_TESTING: YES
-    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
 
 targets:
   GeoSonarHuntApp:
@@ -51,6 +51,35 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UIUserInterfaceStyle: Automatic
 
+  GeoSonarHuntAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Tests/GeoSonarHuntAppTests
+    dependencies:
+      - target: GeoSonarHuntApp
+      - package: GeoSonarCore
+      - package: GeoSonarUI
+      - package: GeoSonarTesting
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.geosohunt.app.tests
+
+  GeoSonarHuntAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - Tests/GeoSonarHuntAppUITests
+    dependencies:
+      - target: GeoSonarHuntApp
+      - package: GeoSonarCore
+      - package: GeoSonarUI
+      - package: GeoSonarTesting
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.geosohunt.app.uitests
+        TEST_TARGET_NAME: GeoSonarHuntApp
+
 packages:
   GeoSonarCore:
     path: Packages/GeoSonarCore
@@ -64,10 +93,17 @@ schemes:
     build:
       targets:
         GeoSonarHuntApp: all
+        GeoSonarHuntAppTests: [test]
+        GeoSonarHuntAppUITests: [test]
     run:
       config: Debug
     test:
       config: Debug
+      targets:
+        - name: GeoSonarHuntAppTests
+          parallelizable: true
+        - name: GeoSonarHuntAppUITests
+          parallelizable: false
     profile:
       config: Release
     analyze:

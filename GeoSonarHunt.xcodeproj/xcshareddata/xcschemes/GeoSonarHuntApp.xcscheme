@@ -21,6 +21,34 @@
                ReferencedContainer = "container:GeoSonarHunt.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B385E9F080B51C72F278B06"
+               BuildableName = "GeoSonarHuntAppTests.xctest"
+               BlueprintName = "GeoSonarHuntAppTests"
+               ReferencedContainer = "container:GeoSonarHunt.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8105BC9C244F8F43C4B7521A"
+               BuildableName = "GeoSonarHuntAppUITests.xctest"
+               BlueprintName = "GeoSonarHuntAppUITests"
+               ReferencedContainer = "container:GeoSonarHunt.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -39,6 +67,28 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B385E9F080B51C72F278B06"
+               BuildableName = "GeoSonarHuntAppTests.xctest"
+               BlueprintName = "GeoSonarHuntAppTests"
+               ReferencedContainer = "container:GeoSonarHunt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8105BC9C244F8F43C4B7521A"
+               BuildableName = "GeoSonarHuntAppUITests.xctest"
+               BlueprintName = "GeoSonarHuntAppUITests"
+               ReferencedContainer = "container:GeoSonarHunt.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>

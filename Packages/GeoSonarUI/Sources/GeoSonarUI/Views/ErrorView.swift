@@ -1,6 +1,10 @@
 import SwiftUI
 import GeoSonarCore
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
 /// View for displaying errors with recovery options
 public struct ErrorView: View {
     let error: GameError
@@ -64,7 +68,7 @@ public struct ErrorView: View {
             }
         }
         .padding(24)
-        .background(Color(.systemBackground))
+        .background(Color.white)
         .cornerRadius(16)
         .shadow(radius: 8)
         .padding(.horizontal, 32)
@@ -131,7 +135,7 @@ public struct ErrorOverlay: ViewModifier {
                             )
                         }
                         .transition(.opacity)
-                        .animation(.easeInOut(duration: 0.3), value: error != nil)
+                        .animation(.easeInOut(duration: 0.3), value: self.error != nil)
                 }
             }
     }

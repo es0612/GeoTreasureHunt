@@ -128,7 +128,7 @@ public struct SettingsView: View {
 #Preview {
     SettingsView(
         viewModel: SettingsViewModel(
-            settingsRepository: MockGameSettingsRepository()
+            settingsRepository: LocalGameSettingsRepository()
         )
     )
 }

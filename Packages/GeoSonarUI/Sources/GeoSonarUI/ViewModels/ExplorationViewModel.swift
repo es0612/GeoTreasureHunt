@@ -153,11 +153,13 @@ public final class ExplorationViewModel: Sendable {
                 try locationService.startLocationUpdates()
             } catch let error as LocationServiceError {
                 switch error {
-                case .locationServicesDisabled:
+                case .serviceUnavailable:
                     await handleError(.locationServiceUnavailable)
                 case .permissionDenied:
                     await handleError(.locationPermissionDenied)
-                case .locationUnavailable:
+                case .gpsSignalWeak:
+                    await handleError(.gpsSignalWeak)
+                case .locationUpdateFailed:
                     await handleError(.gpsSignalWeak)
                 }
             } catch {
