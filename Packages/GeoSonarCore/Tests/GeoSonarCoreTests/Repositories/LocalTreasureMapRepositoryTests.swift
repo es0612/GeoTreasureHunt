@@ -97,7 +97,8 @@ struct LocalTreasureMapRepositoryTests {
         
         // Should not throw for valid data
         let maps = try await repository.getAllMaps()
-        #expect(maps.count >= 0) // Should at least not crash
+        // Should at least not crash - maps can be empty or contain items
+        _ = maps // Just verify we can get maps without crashing
     }
     
     @Test("LocalTreasureMapRepository should validate treasure coordinates")

@@ -36,7 +36,7 @@ struct GameSessionTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(originalSession)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()

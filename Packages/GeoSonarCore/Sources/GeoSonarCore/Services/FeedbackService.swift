@@ -139,7 +139,9 @@ public final class FeedbackService: FeedbackServiceProtocol, @unchecked Sendable
         
         do {
             // Create a simple beep sound programmatically
-            let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1)!
+            guard let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100, channels: 1) else {
+                return false
+            }
             let frameCount = AVAudioFrameCount(44100 * 0.1) // 0.1 second beep
             
             guard let audioBuffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
@@ -201,12 +203,16 @@ public final class FeedbackService: FeedbackServiceProtocol, @unchecked Sendable
     
     private func audioBufferToData(_ buffer: AVAudioPCMBuffer) -> Data {
         let audioFormat = buffer.format
-        let audioFile = try! AVAudioFile(
-            forWriting: URL(fileURLWithPath: NSTemporaryDirectory().appending("temp.wav")),
-            settings: audioFormat.settings
-        )
-        try! audioFile.write(from: buffer)
-        
-        return try! Data(contentsOf: audioFile.url)
+        do {
+            let audioFile = try AVAudioFile(
+                forWriting: URL(fileURLWithPath: NSTemporaryDirectory().appending("temp.wav")),
+                settings: audioFormat.settings
+            )
+            try audioFile.write(from: buffer)
+            return try Data(contentsOf: audioFile.url)
+        } catch {
+            // Return empty data if audio processing fails
+            return Data()
+        }
     }
 }

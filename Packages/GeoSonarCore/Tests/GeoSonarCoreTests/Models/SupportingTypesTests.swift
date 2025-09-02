@@ -16,7 +16,7 @@ struct SupportingTypesTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(originalRegion)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()
@@ -35,7 +35,7 @@ struct SupportingTypesTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(originalSpan)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()
@@ -54,7 +54,7 @@ struct SupportingTypesTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(difficulty)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()
@@ -105,7 +105,7 @@ struct SupportingTypesTests {
         // Test encoding through our custom Codable implementation
         let encoder = JSONEncoder()
         let data = try encoder.encode(CodableCoordinate(coordinate: originalCoordinate))
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()

@@ -34,7 +34,7 @@ struct TreasureTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(originalTreasure)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()

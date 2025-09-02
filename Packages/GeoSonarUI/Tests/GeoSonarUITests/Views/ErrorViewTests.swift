@@ -7,7 +7,7 @@ import SwiftUI
 struct ErrorViewTests {
     
     @Test("ErrorView displays error information correctly")
-    func testErrorViewDisplaysErrorInformation() {
+    @MainActor func testErrorViewDisplaysErrorInformation() {
         let error = GameError.gpsSignalWeak
         var dismissCalled = false
         var retryCalled = false
@@ -23,7 +23,7 @@ struct ErrorViewTests {
     }
     
     @Test("ErrorView shows correct icon for different error severities")
-    func testErrorViewIconsForSeverities() {
+    @MainActor func testErrorViewIconsForSeverities() {
         let criticalError = GameError.locationPermissionDenied
         let warningError = GameError.gpsSignalWeak
         let minorError = GameError.audioServiceUnavailable
@@ -39,7 +39,7 @@ struct ErrorViewTests {
     }
     
     @Test("ErrorView shows retry button for recoverable errors")
-    func testErrorViewRetryButtonForRecoverableErrors() {
+    @MainActor func testErrorViewRetryButtonForRecoverableErrors() {
         let recoverableError = GameError.gpsSignalWeak
         let nonRecoverableError = GameError.compassUnavailable
         
@@ -59,7 +59,7 @@ struct ErrorViewTests {
     }
     
     @Test("ErrorView displays recovery suggestions when available")
-    func testErrorViewRecoverySuggestions() {
+    @MainActor func testErrorViewRecoverySuggestions() {
         let errorWithSuggestion = GameError.locationPermissionDenied
         let errorWithoutSuggestion = GameError.unexpectedError("Test error")
         
@@ -78,7 +78,7 @@ struct ErrorViewTests {
     }
     
     @Test("ErrorOverlay modifier can be applied to views")
-    func testErrorOverlayModifier() {
+    @MainActor func testErrorOverlayModifier() {
         let testView = Text("Test Content")
             .errorOverlay(
                 error: .constant(GameError.mapDataCorrupted),
@@ -91,7 +91,7 @@ struct ErrorViewTests {
     }
     
     @Test("ErrorOverlay handles nil error state")
-    func testErrorOverlayNilError() {
+    @MainActor func testErrorOverlayNilError() {
         let testView = Text("Test Content")
             .errorOverlay(
                 error: .constant(nil),

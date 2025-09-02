@@ -49,7 +49,7 @@ struct TreasureMapTests {
         // Test encoding
         let encoder = JSONEncoder()
         let data = try encoder.encode(originalMap)
-        #expect(data.count > 0)
+        #expect(!data.isEmpty)
         
         // Test decoding
         let decoder = JSONDecoder()

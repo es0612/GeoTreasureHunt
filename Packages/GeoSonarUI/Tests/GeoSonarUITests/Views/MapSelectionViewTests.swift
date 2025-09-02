@@ -79,7 +79,7 @@ struct MapSelectionViewTests {
         #expect(view != nil)
         
         // Verify view model has maps
-        #expect(viewModel.availableMaps.count > 0)
+        #expect(!viewModel.availableMaps.isEmpty)
     }
     
     @Test("MapSelectionView displays error state")
@@ -164,7 +164,7 @@ struct MapSelectionViewTests {
         await viewModel.loadMaps()
         
         // Verify view model updated
-        #expect(viewModel.availableMaps.count > 0)
+        #expect(!viewModel.availableMaps.isEmpty)
         
         // View should still be renderable
         #expect(view != nil)
